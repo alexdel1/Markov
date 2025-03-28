@@ -1,4 +1,4 @@
-from .csv_to_svg_c import *
+from .csv_to_svg_m import *
 import warnings
 warnings.simplefilter("ignore")
 # Or explicitly import the function
