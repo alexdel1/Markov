@@ -75,7 +75,8 @@ def pd_to_nx(B,C):
             texlbl=row['texlbl'],  # Original label as a node attribute
             shape=row['shape'],
             color=row['color'],
-            lblstyle=row['lblstyle']
+            lblstyle=row['lblstyle'],
+            style=row['style']
         )
 
     # Add edges from table C
