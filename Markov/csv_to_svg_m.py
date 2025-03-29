@@ -236,7 +236,7 @@ def csv_to_pd(csv_data,csv_node=""):
         #print(D)
         #print(B)
         # Merge B with D to update texlbl
-        B = B.merge(D[['name', 'texlbl','shape','color','lblstyle']], on='name', how='left')
+        B = B.merge(D[['name','style', 'texlbl','shape','color','lblstyle']], on='name', how='left')
         #print(B)
         # Update texlbl column, keeping original if no match in D
         B['texlbl'] = B['texlbl_y'].fillna(B['texlbl_x'])
@@ -250,7 +250,8 @@ def csv_to_pd(csv_data,csv_node=""):
         'name': B['name'].apply(to_variable_name),
         'shape':B['shape'],
         'color':B['color'],
-        'lblstyle':B['lblstyle']
+        'lblstyle':B['lblstyle'],
+        'style':B['style']
     })
     # Create DataFrame C
     #print("here3",B)
