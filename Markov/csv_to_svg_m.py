@@ -251,7 +251,7 @@ def csv_to_pd(csv_data,csv_node=""):
         'shape':B['shape'],
         'color':B['color'],
         'lblstyle':B['lblstyle'],
-        'style':B['style']
+        'style':B['style'] if 'style' in row else None  
     })
     # Create DataFrame C
     #print("here3",B)
