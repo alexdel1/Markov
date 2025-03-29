@@ -76,7 +76,7 @@ def pd_to_nx(B,C):
             shape=row['shape'],
             color=row['color'],
             lblstyle=row['lblstyle'],
-            style=row['style']
+            style=row['style'] if 'style' in row else None  
         )
 
     # Add edges from table C
