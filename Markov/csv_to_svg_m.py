@@ -267,6 +267,7 @@ def csv_to_pd(csv_data,csv_node=""):
     B['shape'].fillna("rectangle", inplace=True)
     B['color'].fillna("black", inplace=True)
     B['lblstyle'].fillna("black",inplace=True)
+    B['style'].fillna("solid",inplace=True)
     C['label'].fillna("", inplace=True)
     C['style'].fillna("solid", inplace=True)
     C['color'].fillna("black", inplace=True)
