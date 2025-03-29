@@ -119,9 +119,9 @@ for edge in G.edges(data=True):
 # Écrire directement dans un fichier DOT
 #A.write("graph.dot")
 
-def nx_to_dot(G,tex_file_path="graph"):
+def nx_to_dot(G,tex_file_path="graph",layout_engine="dot"):
     dot_graph = to_pydot(G)
-
+    dot_graph.set_layout(layout_engine) 
     # Save the DOT file
     with open(tex_file_path+".dot", "w", encoding="utf-8") as f:
         f.write(dot_graph.to_string())
@@ -273,10 +273,10 @@ def csv_to_pd(csv_data,csv_node=""):
     C['color'].fillna("black", inplace=True)
     C['lblstyle'].fillna("black", inplace=True)
     return (B,C)
-def csv_to_svg(csv_data,csv_node="",tex_file_path = "graph"):
+def csv_to_svg(csv_data,csv_node="",tex_file_path = "graph",layout_engine="dot"):
     (B,C)=csv_to_pd(csv_data,csv_node)
     G = pd_to_nx(B,C)
-    nx_to_dot(G,tex_file_path)
+    nx_to_dot(G,tex_file_path,layout_engine=layout_engine)
 
 
     # Using subprocess for shell commands
